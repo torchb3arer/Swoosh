@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Swoosh</string>
     <string name="background_image">background Image</string>
+    <string name="search_league">Looking for a Co-Ed begginer league near you...</string>
 </resources>
