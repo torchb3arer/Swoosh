@@ -2,9 +2,9 @@ package com.torchbapps.swoosh.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.torchbapps.swoosh.Model.Player
 import com.torchbapps.swoosh.R
-import com.torchbapps.swoosh.Utilities.EXTRA_LEAGUE
-import com.torchbapps.swoosh.Utilities.EXTRA_SKILL
+import com.torchbapps.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_finish.*
 
 class FinishActivity : AppCompatActivity() {
@@ -13,9 +13,7 @@ class FinishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
-
-        searchLeagueTxt.text = "Looking for $league $skill league near you ..."
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+        searchLeagueTxt.text = "Looking for ${player.league} ${player.skill} league near you ..."
     }
 }
